@@ -15,7 +15,7 @@ def test_load_pdf():
     }
     loader_configs = None
     documents = load_document(
-        document_path, content_type, document_meta, loader_configs
+        document_path, content_type, document_meta, loader_configs, loader_type="mineru"
     )
     assert len(documents) > 0
     assert documents[0].page_content is not None
