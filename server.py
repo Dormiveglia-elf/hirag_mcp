@@ -8,12 +8,11 @@ from typing import AsyncIterator, Optional
 
 import numpy as np
 import yaml
-from mcp.server.fastmcp import Context, FastMCP
-from openai import AsyncOpenAI
-
 from hirag import HiRAG, QueryParam
 from hirag._utils import compute_args_hash
 from hirag.base import BaseKVStorage
+from mcp.server.fastmcp import Context, FastMCP
+from openai import AsyncOpenAI
 
 logging.basicConfig(
     level=logging.INFO,
@@ -156,10 +155,7 @@ async def naive_search(
         logger.error(f"Error in HiRAG instance access: {e}")
         return f"{str(e)}"
 
-    param = QueryParam(
-        mode="naive",
-        only_need_context=True
-        )
+    param = QueryParam(mode="naive", only_need_context=True)
     if max_tokens is not None:
         param.max_tokens = max_tokens
 
@@ -189,11 +185,7 @@ async def hi_search(
         return f"{str(e)}"
 
     timeout_seconds = 100
-    param = QueryParam(
-        mode="hi", 
-        only_need_context=True,
-        top_k=10
-    )
+    param = QueryParam(mode="hi", only_need_context=True, top_k=10)
     if max_tokens is not None:
         param.max_tokens = max_tokens
 

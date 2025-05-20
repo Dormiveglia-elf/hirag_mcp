@@ -5,6 +5,10 @@ build/
 dist/
 wheels/
 *.egg-info
+*.db
+*.gpickle
+kb/*
 
- # Virtual environments
- .venv
+# Virtual environments
+.venv
+.env
