@@ -71,7 +71,7 @@ def load_document(
         ValueError: If the content type is not supported.
 
     Returns:
-        List[Document]: The loaded documents.
+        List[File]: The loaded documents.
     """
     if loader_configs is None:
         loader_configs = DEFAULT_LOADER_CONFIGS

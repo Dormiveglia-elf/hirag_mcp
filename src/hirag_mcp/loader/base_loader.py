@@ -51,7 +51,7 @@ class BaseLoader(ABC):
             loader_args (dict): The arguments for the langchain loader.
 
         Returns:
-            list[Document]: Raw documents.
+            list[File]: Raw documents.
         """
         if document_meta is None:
             document_meta = {}
@@ -70,7 +70,7 @@ class BaseLoader(ABC):
             mode (str): The mode for the markify loader.
 
         Returns:
-            list[Document]: Raw documents.
+            list[File]: Raw documents.
         """
         if document_meta is None:
             document_meta = {}
